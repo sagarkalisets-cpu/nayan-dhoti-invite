@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayan's Dhoti Ceremony RSVP</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --maroon: #8d2d2c;
+      --gold: #c89336;
+      --green: #4d6d32;
+      --brown: #3a2520;
+      --muted: #796157;
+      --line: #dfb67f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--brown);
+      background:
+        radial-gradient(circle at 50% 12%, rgba(255,244,205,0.95), transparent 36%),
+        radial-gradient(circle at 12% 24%, rgba(98,119,63,0.22), transparent 22%),
+        radial-gradient(circle at 88% 18%, rgba(98,119,63,0.19), transparent 24%),
+        linear-gradient(180deg, #fff0c8 0%, #fff7df 48%, #ffd891 100%);
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 18px 42px;
+      position: relative;
+    }
+
+    .hero {
+      min-height: 760px;
+      position: relative;
+      overflow: visible;
+      padding: 86px 56px 220px;
+      border-radius: 0 0 36px 36px;
+      background:
+        radial-gradient(circle at 46% 43%, rgba(255,255,244,0.92), transparent 34%),
+        radial-gradient(circle at 20% 86%, rgba(199,147,51,0.18), transparent 20%),
+        linear-gradient(90deg, rgba(255,241,202,0.95) 0%, rgba(255,241,202,0.82) 48%, rgba(255,241,202,0.56) 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 9% 17%, rgba(55,86,33,0.38), transparent 18%),
+        radial-gradient(ellipse at 92% 17%, rgba(55,86,33,0.34), transparent 19%),
+        radial-gradient(circle at 12% 7%, rgba(231,155,37,0.34), transparent 6%),
+        radial-gradient(circle at 30% 4%, rgba(231,155,37,0.28), transparent 5%),
+        radial-gradient(circle at 52% 4%, rgba(231,155,37,0.28), transparent 5%),
+        radial-gradient(circle at 72% 5%, rgba(231,155,37,0.26), transparent 6%),
+        linear-gradient(180deg, rgba(87,111,52,0.13), transparent 26%);
+      filter: saturate(1.08);
+    }
+
+    .garland {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 130px;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 8% 24%, #55713b 0 12px, transparent 13px),
+        radial-gradient(circle at 12% 12%, #486b32 0 18px, transparent 19px),
+        radial-gradient(circle at 18% 2%, #e69e28 0 8px, transparent 9px),
+        radial-gradient(circle at 31% 2%, #f1bf4c 0 8px, transparent 9px),
+        radial-gradient(circle at 44% 2%, #e69e28 0 8px, transparent 9px),
+        radial-gradient(circle at 58% 2%, #f1bf4c 0 8px, transparent 9px),
+        radial-gradient(circle at 72% 2%, #e69e28 0 8px, transparent 9px),
+        radial-gradient(circle at 87% 13%, #486b32 0 18px, transparent 19px),
+        radial-gradient(circle at 92% 25%, #55713b 0 12px, transparent 13px);
+      opacity: 0.9;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 4;
+      max-width: 560px;
+      padding-top: 86px;
+    }
+
+    .hero-copy h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(64px, 8vw, 110px);
+      line-height: 0.9;
+      color: var(--maroon);
+      margin: 0 0 16px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 0 rgba(255,255,255,0.35);
+    }
+
+    .hero-copy h2 {
+      font-family: 'Great Vibes', cursive;
+      color: var(--maroon);
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1;
+      margin: 0 0 22px;
+    }
+
+    .divider {
+      width: 430px;
+      max-width: 92%;
+      height: 1px;
+      background: var(--gold);
+      position: relative;
+      margin: 18px 0 24px;
+    }
+
+    .divider::after {
+      content: "*";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff0cc;
+      color: var(--gold);
+      padding: 0 22px;
+      font-size: 24px;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #4f3a2f;
+      margin: 0 0 14px;
+    }
+
+    .meta {
+      font-size: 22px;
+      line-height: 1.6;
+      font-weight: 500;
+      color: #352824;
+    }
+
+    .nayan-image {
+      position: absolute;
+      z-index: 20;
+      right: 95px;
+      top: 115px;
+      width: min(430px, 39vw);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      filter: drop-shadow(0 24px 22px rgba(92,54,25,0.24));
+      pointer-events: none;
+    }
+
+    .card {
+      max-width: 1010px;
+      margin: -220px auto 0;
+      position: relative;
+      z-index: 10;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.75), transparent 28%),
+        linear-gradient(180deg, rgba(255,250,236,0.98), rgba(255,241,210,0.98));
+      border: 1px solid rgba(199,147,51,0.38);
+      border-radius: 30px;
+      padding: 34px clamp(22px, 6vw, 70px) 36px;
+      box-shadow: 0 24px 50px rgba(105,59,24,0.18);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      font-family: 'Playfair Display', serif;
+      font-size: 44px;
+      color: var(--maroon);
+      margin: 0;
+    }
+
+    .section-title h2::before,
+    .section-title h2::after {
+      content: "--";
+      color: var(--gold);
+      font-size: 26px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .section-title p {
+      max-width: 660px;
+      margin: 12px auto 0;
+      color: #593f37;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    label {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #4b211f;
+      margin: 22px 0 10px;
+    }
+
+    input, select {
+      width: 100%;
+      min-height: 58px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.64);
+      padding: 14px 18px;
+      color: var(--brown);
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200,147,54,0.15);
+      background: rgba(255,255,255,0.86);
+    }
+
+    .hint {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .attendance {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 10px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70px;
+      margin: 0;
+      padding: 15px 18px;
+      border-radius: 14px;
+      border: 1px solid #d4b076;
+      background: linear-gradient(180deg, rgba(255,252,239,0.92), rgba(255,244,214,0.88));
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: #4e4427;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .choice.no {
+      color: #79352d;
+      background: linear-gradient(180deg, rgba(255,250,241,0.92), rgba(255,232,220,0.88));
+    }
+
+    .choice input { display: none; }
+
+    .choice.selected {
+      transform: translateY(-1px);
+      border-color: #9b8a40;
+      box-shadow: 0 10px 22px rgba(136,96,38,0.14), inset 0 0 0 2px rgba(255,255,255,0.42);
+    }
+
+    .choice.no.selected {
+      border-color: #b65a4f;
+      box-shadow: 0 10px 22px rgba(139,45,39,0.12), inset 0 0 0 2px rgba(255,255,255,0.42);
+    }
+
+    .guest-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .hidden { display: none; }
+
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      min-height: 68px;
+      margin-top: 28px;
+      background: linear-gradient(180deg, #b5312a, #91231f);
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(141,45,44,0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(141,45,44,0.27);
+    }
+
+    .privacy {
+      text-align: center;
+      color: #8b4a3f;
+      font-size: 15px;
+      margin: 18px 0 0;
+    }
+
+    .success {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #f4fff1;
+      border: 1px solid #b9d8a8;
+      color: #315d35;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .calendar-card {
+      max-width: 1010px;
+      margin: 18px auto 0;
+      background: rgba(255,247,231,0.9);
+      border: 1px solid rgba(199,147,51,0.32);
+      border-radius: 24px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: center;
+      box-shadow: 0 12px 30px rgba(105,59,24,0.10);
+    }
+
+    .calendar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #4b211f;
+      margin: 0 0 8px;
+    }
+
+    .calendar-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .calendar-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cal-btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid #789055;
+      border-radius: 12px;
+      padding: 15px 18px;
+      color: var(--green);
+      background: #fffdf5;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 24px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .page {
+        padding: 0 10px 30px;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 64px 18px 70px;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 0 0 28px 28px;
+      }
+
+      .garland {
+        height: 92px;
+        opacity: 0.65;
+      }
+
+      .hero-copy {
+        padding-top: 22px;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(48px, 16vw, 76px);
+        line-height: 0.92;
+        margin-bottom: 10px;
+      }
+
+      .hero-copy h2 {
+        font-size: clamp(32px, 10vw, 48px);
+        line-height: 1.05;
+        margin-bottom: 16px;
+      }
+
+      .divider {
+        width: 82%;
+        margin: 14px auto 20px;
+      }
+
+      .meta {
+        font-size: clamp(18px, 5vw, 25px);
+        line-height: 1.45;
+        max-width: 92%;
+        margin: 0 auto;
+      }
+
+      .nayan-image {
+        position: relative;
+        display: block;
+        width: min(260px, 58vw);
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 28px auto -42px;
+        z-index: 20;
+        filter: drop-shadow(0 18px 18px rgba(92,54,25,0.22));
+      }
+
+      .card {
+        margin-top: -28px;
+        padding: 74px 18px 28px;
+        z-index: 10;
+        border-radius: 26px;
+      }
+
+      .section-title {
+        margin-bottom: 22px;
+      }
+
+      .section-title h2 {
+        font-size: 34px;
+        gap: 10px;
+      }
+
+      .section-title h2::before,
+      .section-title h2::after {
+        font-size: 18px;
+      }
+
+      .section-title p {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      label {
+        font-size: 24px;
+        margin-top: 20px;
+      }
+
+      input, select {
+        min-height: 58px;
+        font-size: 16px;
+      }
+
+      .attendance,
+      .calendar-card {
+        grid-template-columns: 1fr;
+      }
+
+      .choice {
+        font-size: 21px;
+        min-height: 62px;
+      }
+
+      button {
+        font-size: 25px;
+        min-height: 62px;
+      }
+
+      .calendar-card {
+        padding: 20px;
+        border-radius: 22px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding-top: 54px;
+        padding-bottom: 62px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(42px, 15vw, 62px);
+      }
+
+      .hero-copy h2 {
+        font-size: clamp(30px, 9vw, 40px);
+      }
+
+      .meta {
+        font-size: 19px;
+      }
+
+      .nayan-image {
+        width: min(230px, 62vw);
+        margin-top: 22px;
+        margin-bottom: -36px;
+      }
+
+      .card {
+        padding-top: 66px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="garland"></div>
+
+      <div class="hero-copy">
+        <h1>Nayan's</h1>
+        <h2>Dhoti Ceremony</h2>
+        <div class="divider"></div>
+        <div class="meta">
+          June 27, 2026 &nbsp;-&nbsp; 11:00 AM ET<br>
+          Tampa, Florida
+        </div>
+      </div>
+
+      <img class="nayan-image" src="nayan-image.png" alt="Nayan in traditional attire">
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>RSVP</h2>
+        <p>We're so excited to celebrate with you!</p>
+      </div>
+
+      <form id="rsvpForm" action="https://formspree.io/f/mvzdnrnl" method="POST">
+        <label for="primaryName">1. Your Name</label>
+        <input id="primaryName" name="primary_name" type="text" placeholder="Enter your full name" required>
+
+        <label for="email">2. Email Address</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+        <p class="hint">We'll use this only for RSVP updates and the calendar invite.</p>
+
+        <label>3. Will you be attending?</label>
+        <div class="attendance">
+          <label class="choice" id="yesChoice">
+            <input type="radio" name="attendance" value="Yes" required checked>
+            Yes, will be there
+          </label>
+          <label class="choice no" id="noChoice">
+            <input type="radio" name="attendance" value="No" required>
+            Sorry, can't make it
+          </label>
+        </div>
+
+        <div id="yesFields">
+          <label for="guestCount">4. Number of Guests (including yourself)</label>
+          <select id="guestCount" name="guest_count" required>
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+            <option value="7">7 guests</option>
+            <option value="8">8 guests</option>
+            <option value="9">9 guests</option>
+          </select>
+
+          <label>5. Guest Names (including yourself)</label>
+          <p class="hint">Please enter each guest name below.</p>
+          <div id="guestNames" class="guest-grid"></div>
+        </div>
+
+        <input type="hidden" name="event" value="Nayan's Dhoti Ceremony">
+        <input type="hidden" name="event_date" value="June 27, 2026 at 11:00 AM ET">
+        <input type="hidden" name="event_location" value="Tampa, Florida">
+
+        <button type="submit">Submit RSVP *</button>
+        <p class="privacy">Your information is safe with us and will only be used for this event.</p>
+
+        <div id="successMsg" class="success">Thank you! Your RSVP has been submitted.</div>
+      </form>
+    </section>
+
+    <section class="calendar-card">
+      <div>
+        <h3>Add to Your Calendar</h3>
+        <p>Don't forget to save the date! Add Nayan's Dhoti Ceremony to your calendar so you don't miss it.</p>
+      </div>
+      <div class="calendar-actions">
+        <a class="cal-btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nayan%27s%20Dhoti%20Ceremony&dates=20260627T110000/20260627T140000&ctz=America%2FNew_York&location=Tampa%2C%20Florida&details=Dhoti%20Ceremony%20for%20Nayan.%20Dress%20code%3A%20Ethnic%20Wear.">Add to Google Calendar</a>
+        <a class="cal-btn" id="icsDownload" href="#">Download Calendar Invite (.ics)</a>
+      </div>
+    </section>
+
+    <div class="footer">We look forward to celebrating with you.</div>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var guestCount = document.getElementById('guestCount');
+      var guestNames = document.getElementById('guestNames');
+      var yesFields = document.getElementById('yesFields');
+      var attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+      var form = document.getElementById('rsvpForm');
+      var successMsg = document.getElementById('successMsg');
+      var icsDownload = document.getElementById('icsDownload');
+
+      function renderGuestInputs() {
+        var count = Number(guestCount.value || 1);
+        guestNames.innerHTML = '';
+
+        for (var i = 1; i <= count; i += 1) {
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.name = 'guest_' + i + '_name';
+          input.placeholder = i === 1 ? 'Guest 1 name' : 'Guest ' + i + ' name';
+          input.required = true;
+          guestNames.appendChild(input);
+        }
+      }
+
+      function updateAttendanceFields() {
+        var checkedAttendance = document.querySelector('input[name="attendance"]:checked');
+        var attending = Boolean(checkedAttendance && checkedAttendance.value === 'Yes');
+
+        yesFields.classList.toggle('hidden', !attending);
+
+        Array.prototype.forEach.call(yesFields.querySelectorAll('input, select'), function (el) {
+          el.required = attending;
+        });
+
+        Array.prototype.forEach.call(document.querySelectorAll('.choice'), function (choice) {
+          var radio = choice.querySelector('input[type="radio"]');
+          choice.classList.toggle('selected', Boolean(radio && radio.checked));
+        });
+      }
+
+      function buildICSContent() {
+        return [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Nayan Dhoti Ceremony//RSVP Invite//EN',
+          'CALSCALE:GREGORIAN',
+          'BEGIN:VEVENT',
+          'UID:nayan-dhoti-ceremony-20260627@example.com',
+          'DTSTAMP:20260426T120000Z',
+          'DTSTART;TZID=America/New_York:20260627T110000',
+          'DTEND;TZID=America/New_York:20260627T140000',
+          'SUMMARY:Nayan Dhoti Ceremony',
+          'LOCATION:Tampa, Florida',
+          'DESCRIPTION:Dhoti Ceremony for Nayan. Dress code: Ethnic Wear.',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\\r\\n');
+      }
+
+      function createICSFile() {
+        var icsContent = buildICSContent();
+        var blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        icsDownload.href = url;
+        icsDownload.download = 'nayan-dhoti-ceremony.ics';
+      }
+
+      function runSelfTests() {
+        console.assert(Boolean(guestCount), 'guestCount exists');
+        console.assert(Boolean(guestNames), 'guestNames exists');
+        console.assert(Boolean(yesFields), 'yesFields exists');
+        console.assert(buildICSContent().indexOf('DTSTART;TZID=America/New_York:20260627T110000') !== -1, 'ICS start time is 11 AM ET');
+        console.assert(buildICSContent().indexOf('\\r\\n') !== -1, 'ICS uses escaped CRLF separators');
+      }
+
+      guestCount.addEventListener('change', renderGuestInputs);
+
+      Array.prototype.forEach.call(attendanceRadios, function (radio) {
+        radio.addEventListener('change', updateAttendanceFields);
+      });
+
+      icsDownload.addEventListener('click', createICSFile);
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (form.action.indexOf('https://formspree.io/f/mvzdnrnl') !== -1) {
+          alert('Add your Formspree endpoint URL in the form action before sharing this page.');
+          return;
+        }
+
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error('Form submission failed');
+            }
+
+            createICSFile();
+            successMsg.style.display = 'block';
+            form.reset();
+            renderGuestInputs();
+            updateAttendanceFields();
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          })
+          .catch(function () {
+            alert('Something went wrong. Please check your internet connection and try again.');
+          });
+      });
+
+      renderGuestInputs();
+      updateAttendanceFields();
+      createICSFile();
+      runSelfTests();
+    }());
+  </script>
+</body>
+</html>
